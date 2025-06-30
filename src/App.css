@@ -56,12 +56,20 @@ body {
   width: 100%;
   font-size: 0.8rem;
   margin-top: 4px;
+  background-color: white;
+  color: black;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .player-box button {
   font-size: 0.7rem;
   padding: 2px 5px;
   margin-top: 2px;
+  background-color: white;
+  color: black;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .label {
