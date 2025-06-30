@@ -1,0 +1,84 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background: url("/FC25_REV_GENERIC_RUSH_16x9_HIRES_WM-copy.jpg") no-repeat
+    center center fixed;
+  background-size: cover;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.field-background {
+  position: relative;
+  width: 700px;
+  height: 850px;
+  background: transparent;
+}
+
+.player-box {
+  position: absolute;
+  width: 130px;
+  height: 110px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 1px solid #333;
+  padding: 6px;
+  border-radius: 8px;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.player-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow-y: auto;
+  max-height: 48px;
+  font-size: 0.8rem;
+}
+
+.player-box input {
+  width: 100%;
+  font-size: 0.8rem;
+  margin-top: 4px;
+}
+
+.player-box button {
+  font-size: 0.7rem;
+  padding: 2px 5px;
+  margin-top: 2px;
+}
+
+.label {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 480px) {
+  .field-background {
+    transform: scale(0.65);
+    transform-origin: top center;
+  }
+}
+
+@media (max-width: 380px) {
+  .field-background {
+    transform: scale(0.55);
+    transform-origin: top center;
+  }
+}
