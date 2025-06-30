@@ -106,11 +106,19 @@ button {
   .player-box input {
     font-size: 0.7rem;
     padding: 2px;
+    background-color: white;
+    color: black;
+    border: 1px solid #ccc;
+    border-radius: 4px;
   }
 
   .player-box button {
     font-size: 0.6rem;
     padding: 2px 4px;
+    background-color: white;
+    color: black;
+    border: 1px solid #ccc;
+    border-radius: 4px;
   }
 }
 
@@ -141,10 +149,18 @@ button {
 
   .player-box input {
     font-size: 0.7rem;
+    background-color: white;
+    color: black;
+    border: 1px solid #ccc;
+    border-radius: 4px;
   }
 
   .player-box button {
     font-size: 0.6rem;
     padding: 2px 4px;
+    background-color: white;
+    color: black;
+    border: 1px solid #ccc;
+    border-radius: 4px;
   }
 }
