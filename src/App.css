@@ -11,6 +11,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: black;
 }
 
 .app-wrapper {
@@ -41,6 +42,12 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  color: black;
+}
+
+.player-box * {
+  box-sizing: border-box;
+  color: black;
 }
 
 .player-box ul {
@@ -52,21 +59,30 @@ body {
   font-size: 0.8rem;
 }
 
+.player-box ul li {
+  color: black;
+}
+
 .player-box input {
   width: 100%;
   font-size: 0.8rem;
   margin-top: 4px;
+  padding: 4px;
   background-color: white;
   color: black;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
+.player-box input::placeholder {
+  color: #888;
+}
+
 .player-box button {
   font-size: 0.7rem;
   padding: 2px 5px;
   margin-top: 2px;
-  background-color: white;
+  background-color: #f0f0f0;
   color: black;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -75,60 +91,10 @@ body {
 .label {
   font-weight: bold;
   font-size: 0.9rem;
+  color: black;
 }
 
-input {
-  background-color: white !important;
-  color: black !important;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 2px 4px;
-}
-
-button {
-  background-color: #f0f0f0 !important;
-  color: black !important;
-  border: 1px solid #888;
-  border-radius: 4px;
-}
-
-@media (max-width: 480px) {
-  .field-background {
-    transform: scale(0.65);
-    transform-origin: top center;
-  }
-
-  .player-box {
-    width: 100px;
-    height: 90px;
-  }
-
-  .player-box input {
-    font-size: 0.7rem;
-    padding: 2px;
-    background-color: white;
-    color: black;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-
-  .player-box button {
-    font-size: 0.6rem;
-    padding: 2px 4px;
-    background-color: white;
-    color: black;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-}
-
-@media (max-width: 380px) {
-  .field-background {
-    transform: scale(0.55);
-    transform-origin: top center;
-  }
-}
-
+/* Mobile optimizations */
 @media (max-width: 600px) {
   .field-background {
     transform: scale(0.75);
@@ -148,19 +114,26 @@ button {
   }
 
   .player-box input {
-    font-size: 0.7rem;
-    background-color: white;
-    color: black;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    font-size: 16px !important; /* evita zoom en iOS */
+    padding: 2px;
   }
 
   .player-box button {
     font-size: 0.6rem;
     padding: 2px 4px;
-    background-color: white;
-    color: black;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .field-background {
+    transform: scale(0.65);
+    transform-origin: top center;
+  }
+}
+
+@media (max-width: 380px) {
+  .field-background {
+    transform: scale(0.55);
+    transform-origin: top center;
   }
 }

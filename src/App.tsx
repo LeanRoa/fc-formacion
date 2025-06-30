@@ -88,6 +88,7 @@ function App() {
       setNames((prev) => ({ ...prev, [posId]: updatedNames }));
     }
     setInputs((prev) => ({ ...prev, [posId]: "" }));
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
