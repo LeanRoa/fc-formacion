@@ -205,6 +205,56 @@ body {
   overflow-y: auto;
 }
 
+.formation-selector {
+  text-align: center;
+  margin: 20px auto;
+  color: white;
+  font-weight: bold;
+}
+
+.formation-selector select {
+  font-size: 1rem;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: white;
+  color: black;
+}
+
+.sub-dropdown {
+  position: relative;
+}
+
+.sub-dropbtn {
+  background: transparent;
+  border: none;
+  color: white;
+  width: 100%;
+  text-align: right;
+  padding: 8px 12px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.sub-dropbtn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sub-dropdown-content {
+  display: none;
+  position: absolute;
+  right: 100%;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  border-radius: 4px;
+  min-width: 120px;
+  z-index: 1002;
+}
+
+.sub-dropdown:hover .sub-dropdown-content {
+  display: block;
+}
+
 /* Mobile optimizations */
 @media (max-width: 600px) {
   .field-background {
