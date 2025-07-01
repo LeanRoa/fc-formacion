@@ -91,27 +91,76 @@ function App() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const [view, setView] = useState<"formacion" | "about">("about");
+
   return (
-    <div className="app-wrapper">
-      <div className="field-background">
-        {positions.map(({ id, label, top, left }) => (
-          <div key={id} className="player-box" style={{ top, left }}>
-            <div className="label">{label}</div>
-            <ul>
-              {(names[id] || []).map((n, i) => (
-                <li key={i}>{n}</li>
-              ))}
-            </ul>
-            <input
-              placeholder="Tu nombre"
-              value={inputs[id] || ""}
-              onChange={(e) => handleChange(id, e.target.value)}
-            />
-            <button onClick={() => handleSubmit(id)}>Agregar</button>
+    <>
+      <header className="main-header">
+        <div className="header-content">
+          <div className="logo">Mavale FC</div>
+          <nav className="nav-menu">
+            <div className="dropdown">
+              <button className="dropbtn">Menú ▾</button>
+              <div className="dropdown-content">
+                <button onClick={() => setView("formacion")}>Formación</button>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      {view === "formacion" && (
+        <div className="app-wrapper">
+          <div className="field-background">
+            {positions.map(({ id, label, top, left }) => (
+              <div key={id} className="player-box" style={{ top, left }}>
+                <div className="label">{label}</div>
+                <ul>
+                  {(names[id] || []).map((n, i) => (
+                    <li key={i}>{n}</li>
+                  ))}
+                </ul>
+                <input
+                  placeholder="Tu nombre"
+                  value={inputs[id] || ""}
+                  onChange={(e) => handleChange(id, e.target.value)}
+                />
+                <button onClick={() => handleSubmit(id)}>Agregar</button>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-    </div>
+        </div>
+      )}
+
+      {view === "about" && (
+        <div className="about-wrapper">
+          <div className="about-column">
+            <p>
+              Mavale FC es un equipo formado por amigos, que compite en FC
+              Clubes Pro.
+            </p>
+            <p>
+              Esta app permite organizar nuestras formaciones, establecer
+              titulares y suplentes, y coordinar quiénes juegan en cada partido.
+            </p>
+            <p>
+              Cada jugador puede agregar su nombre a la posición que le
+              corresponde, y así todos sabemos quiénes están disponibles para
+              jugar.
+            </p>
+            <p>
+              Ir a la sección de "Formación" dentro del menú para ver el campo y
+              agregar tu nombre en la posición que te corresponde.
+            </p>
+            <img
+              src="/IMG_3836.jpeg"
+              alt="Team Mavale FC"
+              className="about-image"
+            />
+          </div>
+        </div>
+      )}
+    </>
   );
 }
 
