@@ -63,6 +63,18 @@ function App() {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (!target.closest(".player-box")) {
+        setExpandedBox(null);
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, []);
+
   const handleChange = (posId: string, value: string) => {
     setInputs((prev) => ({ ...prev, [posId]: value }));
   };
@@ -92,6 +104,7 @@ function App() {
   };
 
   const [view, setView] = useState<"formacion" | "about">("about");
+  const [expandedBox, setExpandedBox] = useState<string | null>(null);
 
   return (
     <>
@@ -119,7 +132,13 @@ function App() {
         <div className="app-wrapper">
           <div className="field-background">
             {positions.map(({ id, label, top, left }) => (
-              <div key={id} className="player-box" style={{ top, left }}>
+              <div
+                key={id}
+                className={`player-box ${expandedBox === id ? "expanded" : ""}`}
+                style={{ top, left }}
+                onClick={() => setExpandedBox(expandedBox === id ? null : id)}
+              >
+                {" "}
                 <div className="label">{label}</div>
                 <ul>
                   {(names[id] || []).map((n, i) => (

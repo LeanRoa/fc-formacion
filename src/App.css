@@ -192,6 +192,19 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
+.player-box.expanded {
+  height: auto;
+  min-height: 140px;
+  max-height: none;
+  z-index: 10;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.player-box.expanded ul {
+  max-height: none;
+  overflow-y: auto;
+}
+
 /* Mobile optimizations */
 @media (max-width: 600px) {
   .field-background {
