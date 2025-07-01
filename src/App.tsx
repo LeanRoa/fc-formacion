@@ -97,7 +97,13 @@ function App() {
     <>
       <header className="main-header">
         <div className="header-content">
-          <div className="logo">Mavale FC</div>
+          <div
+            className="logo"
+            onClick={() => setView("about")}
+            style={{ cursor: "pointer" }}
+          >
+            Mavale FC
+          </div>{" "}
           <nav className="nav-menu">
             <div className="dropdown">
               <button className="dropbtn">Menú ▾</button>
